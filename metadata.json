@@ -1,0 +1,7 @@
+{
+  "name": "激光眼",
+  "description": "一款增强现实体验应用，当您将手靠近头部时会触发激光眼特效。",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
