@@ -21,9 +21,10 @@ let faceLandmarker: FaceLandmarker | null = null;
 let handLandmarker: HandLandmarker | null = null;
 
 export const initializeVisionModels = async () => {
-  // Use @latest for WASM to match the recent version in import map and avoid version mismatch errors
+  // FIX: Use exact version 0.10.14 to match package.json and prevent WASM mismatch errors
+  // which often appear as a freeze after "Created TensorFlow Lite XNNPACK delegate for CPU"
   const vision = await FilesetResolver.forVisionTasks(
-    "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/wasm"
+    "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm"
   );
 
   faceLandmarker = await FaceLandmarker.createFromOptions(vision, {
