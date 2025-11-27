@@ -358,7 +358,7 @@ const SparkSystem = ({ beamLengthRef }: { beamLengthRef: React.MutableRefObject<
             {particles.map((_, i) => (
                 <mesh 
                     key={i} 
-                    ref={el => { meshesRef.current[i] = el; }}
+                    ref={(el: THREE.Mesh | null) => { meshesRef.current[i] = el; }}
                     geometry={sparkGeo}
                 >
                     <meshBasicMaterial 
